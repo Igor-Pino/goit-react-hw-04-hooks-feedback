@@ -8,17 +8,25 @@ function StatisticHooks() {
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
 
-  const onBtnClick = e => {
-    if (e.target.name === 'good') {
-      setGood(prev => good + 1);
+  const options = Object.keys({ good, neutral, bad });
+
+  const onBtnClick = option => {
+    switch (option) {
+      case 'good':
+        setGood(prev => good + 1);
+        break;
+
+      case 'neutral':
+        setNeutral(prev => neutral + 1);
+        break;
+
+      case 'bad':
+        setBad(prev => bad + 1);
+        break;
+
+      default:
+        break;
     }
-    if (e.target.name === 'bad') {
-      setBad(prev => bad + 1);
-    }
-    if (e.target.name === 'neutral') {
-      setNeutral(prev => neutral + 1);
-    }
-    return;
   };
 
   const totalFeedback = () => {
@@ -33,7 +41,7 @@ function StatisticHooks() {
 
   return (
     <div>
-      <Options onOptionBtn={onBtnClick} />
+      <Options onOptionBtn={onBtnClick} options={options} />
 
       <>
         <h2 className={s.statisticTitle}>Statistic</h2>
