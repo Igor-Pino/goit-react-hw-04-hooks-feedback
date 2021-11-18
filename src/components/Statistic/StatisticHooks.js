@@ -13,15 +13,15 @@ function StatisticHooks() {
   const onBtnClick = option => {
     switch (option) {
       case 'good':
-        setGood(prev => good + 1);
+        setGood(prev => prev + 1);
         break;
 
       case 'neutral':
-        setNeutral(prev => neutral + 1);
+        setNeutral(prev => prev + 1);
         break;
 
       case 'bad':
-        setBad(prev => bad + 1);
+        setBad(prev => prev + 1);
         break;
 
       default:
