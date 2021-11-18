@@ -1,12 +1,12 @@
 import SectionTitle from './components/SectionTitle/SectionTitle';
 
-import StatisticHooks from './components/Statistic/StatisticHooks';
+import Statistic from './components/Statistic/Statistic';
 
 export default function App() {
   return (
     <div>
       <SectionTitle>
-        <StatisticHooks />
+        <Statistic />
       </SectionTitle>
     </div>
   );
